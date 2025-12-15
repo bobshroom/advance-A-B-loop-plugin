@@ -85,6 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="I18n.cs" />
     <Compile Include="JsonKeyValueStore.cs" />
     <Compile Include="MusicBeeInterface.cs" />
     <Compile Include="TestCSharpDll.cs" />
