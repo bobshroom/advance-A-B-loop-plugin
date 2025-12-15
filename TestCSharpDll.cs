@@ -78,7 +78,7 @@ namespace MusicBeePlugin
                 about.Type = PluginType.General;
                 about.VersionMajor = 1;  // your plugin version 破壊的変更
                 about.VersionMinor = 0; // your plugin version 機能追加
-                about.Revision = 0; // your plugin version バグ修正
+                about.Revision = 1; // your plugin version バグ修正
                 about.MinInterfaceVersion = MinInterfaceVersion;
                 about.MinApiRevision = MinApiRevision;
                 about.ReceiveNotifications = (ReceiveNotificationFlags.PlayerEvents | ReceiveNotificationFlags.TagEvents);
@@ -543,7 +543,7 @@ namespace MusicBeePlugin
                     {
                         case PlayState.Playing:
                             isPlaying = true;
-                            GetTagInfo();
+                            //GetTagInfo();
                             SetCheckTimer();
                             loopTimeCountTimer.Start();
                             break;
@@ -561,7 +561,8 @@ namespace MusicBeePlugin
                     break;
 
                 case NotificationType.TagsChanged:
-                    GetTagInfo();
+                    //Debug.WriteLine("タグ変更通知受信");
+                    //GetTagInfo();
                     break;
             }
         }
@@ -649,7 +650,7 @@ namespace MusicBeePlugin
         private void GetTagInfo()
         {
             // プラグイン専用のタグから情報を取得
-            Debug.WriteLine("タグ情報取得開始");
+            //Debug.WriteLine("タグ情報取得開始");
             string loopStartStr = mbApiInterface.NowPlaying_GetFileTag((MetaDataType)Enum.Parse(typeof(MetaDataType), startTag));
             string loopEndStr = mbApiInterface.NowPlaying_GetFileTag((MetaDataType)Enum.Parse(typeof(MetaDataType), endTag));
             //string echoStr = mbApiInterface.NowPlaying_GetFileTag((MetaDataType)Enum.Parse(typeof(MetaDataType), echoTag));
@@ -658,7 +659,7 @@ namespace MusicBeePlugin
             loopStartMs = TimeStringToMilliseconds(loopStartStr);
             loopEndMs = TimeStringToMilliseconds(loopEndStr);
 
-            Debug.WriteLine("変換開始");
+            //Debug.WriteLine("変換開始");
 
             /*if (string.IsNullOrEmpty(echoStr))
             {
@@ -688,7 +689,7 @@ namespace MusicBeePlugin
                     BPM = 120.0f;
                 }
             }
-            Debug.WriteLine("タグ取得終了");
+            //Debug.WriteLine("タグ取得終了");
         }
 
         private bool IsOutLoopRegion(int currentPositionMs)
@@ -711,12 +712,12 @@ namespace MusicBeePlugin
                 //currentPositionMs -= 120;
                 if (IsOutLoopRegion(currentPositionMs - offsetMs) && loopCounter != 1)
                 {
-                    Debug.WriteLine("ループ前の位置       :" + loopEndMs.ToString());
-                    Debug.WriteLine("ループ前の実際の位置 :" + mbApiInterface.Player_GetPosition().ToString());
+                    //Debug.WriteLine("ループ前の位置       :" + loopEndMs.ToString());
+                    //Debug.WriteLine("ループ前の実際の位置 :" + mbApiInterface.Player_GetPosition().ToString());
                     mbApiInterface.Player_SetPosition(loopStartMs);
                     //offsetMs = loopStartMs - mbApiInterface.Player_GetPosition();
-                    Debug.WriteLine("ループ後の位置       :" + loopStartMs.ToString());
-                    Debug.WriteLine("ループ後の実際の位置 :" + mbApiInterface.Player_GetPosition().ToString());
+                    //Debug.WriteLine("ループ後の位置       :" + loopStartMs.ToString());
+                    //Debug.WriteLine("ループ後の実際の位置 :" + mbApiInterface.Player_GetPosition().ToString());
                     loopCounter--;
                     if (isIncrecasePlayCount && playTimeInLoop >= playTimeNeedToIncrease)
                     {
@@ -774,7 +775,7 @@ namespace MusicBeePlugin
             mbApiInterface.Library_CommitTagsToFile(mbApiInterface.NowPlaying_GetFileUrl());
             loopEndMs = currentPositionMs;
             SetCheckTimer();
-            Debug.WriteLine("ループ終了地点を保存:" + currentPositionMs);
+            //Debug.WriteLine("ループ終了地点を保存:" + currentPositionMs);
         }
         private void toggleLooping(object sender, EventArgs args)
         {
@@ -852,7 +853,7 @@ namespace MusicBeePlugin
 
             int s = (int)(d + Math.Floor((x - d) / L) * L);
             int nextMeasurePositionMs;
-            Debug.WriteLine($"小節の頭: {s}, 現在位置: {x}, 差分: {x - s}");
+            //Debug.WriteLine($"小節の頭: {s}, 現在位置: {x}, 差分: {x - s}");
             if (x - s <= r)
             {
                 // 次の小節の頭から近い場合は前の小節へ
@@ -884,7 +885,7 @@ namespace MusicBeePlugin
 
             int s = (int)(d + Math.Floor((x - d) / L) * L);
             int nextMeasurePositionMs;
-            Debug.WriteLine($"小節の頭: {s}, 現在位置: {x}, 差分: {x - s}");
+            //Debug.WriteLine($"小節の頭: {s}, 現在位置: {x}, 差分: {x - s}");
             if (x - s <= r)
             {
                 // 次の小節の頭から近い場合は前の小節へ
