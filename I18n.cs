@@ -24,7 +24,7 @@ public static class I18n
                 switch (key)
                 {
                     case "api_title":
-                        return "Advance A-B loop";
+                        return "Advanced A-B loop";
                     case "description":
                         return "高度なA-Bリピートの機能を提供します。";
                     case "hotkeyStartTime":
@@ -80,7 +80,7 @@ public static class I18n
                 switch (key)
                 {
                     case "api_title":
-                        return "Advance A-B loop";
+                        return "Advanced A-B loop";
                     case "description":
                         return "Provides advanced A-B loop functionality.";
                     case "hotkeyStartTime":

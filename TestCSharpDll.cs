@@ -106,7 +106,7 @@ namespace MusicBeePlugin
 
                 // 設定の読み取り
                 string dataPath = mbApiInterface.Setting_GetPersistentStoragePath();
-                string jsonFile = Path.Combine(dataPath, "advanceABLoopSettings.json");
+                string jsonFile = Path.Combine(dataPath, "advancedABLoopSettings.json");
 
                 var loaded = JsonKeyValueStore.LoadKeyValue(jsonFile);
 
@@ -461,7 +461,7 @@ namespace MusicBeePlugin
         {
             // save any persistent settings in a sub-folder of this path
             string dataPath = mbApiInterface.Setting_GetPersistentStoragePath();
-            string jsonFile = Path.Combine(dataPath, "advanceABLoopSettings.json");
+            string jsonFile = Path.Combine(dataPath, "advancedABLoopSettings.json");
 
             startTag = startTagTemp;
             endTag = endTagTemp;
@@ -502,7 +502,7 @@ namespace MusicBeePlugin
             try
             {
                 string dataPath = mbApiInterface.Setting_GetPersistentStoragePath();
-                string settingsFile = Path.Combine(dataPath, "advanceABLoopSettings.json");
+                string settingsFile = Path.Combine(dataPath, "advancedABLoopSettings.json");
 
                 if (File.Exists(settingsFile))
                 {

@@ -7,6 +7,13 @@
       "RelativeMoniker": "D:0:0:{F5D46BA1-6F21-40EF-9695-46105CCACD08}|CSharpDll.csproj|solutionrelative:testcsharpdll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F5D46BA1-6F21-40EF-9695-46105CCACD08}|CSharpDll.csproj|C:\\workspace\\musicbeeplugins\\C# Source3.0\\musicbeeinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5D46BA1-6F21-40EF-9695-46105CCACD08}|CSharpDll.csproj|solutionrelative:musicbeeinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|CSharpDll||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F5D46BA1-6F21-40EF-9695-46105CCACD08}|CSharpDll.csproj|C:\\workspace\\musicbeeplugins\\C# Source3.0\\i18n.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5D46BA1-6F21-40EF-9695-46105CCACD08}|CSharpDll.csproj|solutionrelative:i18n.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,14 +22,10 @@
       "RelativeMoniker": "D:0:0:{F5D46BA1-6F21-40EF-9695-46105CCACD08}|CSharpDll.csproj|solutionrelative:jsonkeyvaluestore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5D46BA1-6F21-40EF-9695-46105CCACD08}|CSharpDll.csproj|C:\\workspace\\musicbeeplugins\\C# Source3.0\\musicbeeinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5D46BA1-6F21-40EF-9695-46105CCACD08}|CSharpDll.csproj|solutionrelative:musicbeeinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|CSharpDll||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|MusicBee||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5D46BA1-6F21-40EF-9695-46105CCACD08}|CSharpDll.csproj|c:\\workspace\\musicbeeplugins\\c# source3.0\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,32 +50,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "I18n.cs",
               "DocumentMoniker": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\I18n.cs",
               "RelativeDocumentMoniker": "I18n.cs",
-              "ToolTip": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\I18n.cs*",
-              "RelativeToolTip": "I18n.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAtAAAAAAAAAA==",
+              "ToolTip": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\I18n.cs",
+              "RelativeToolTip": "I18n.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAAAFIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-13T11:29:30.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-13T11:29:30.413Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MusicBeeInterface.cs",
               "DocumentMoniker": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\MusicBeeInterface.cs",
               "RelativeDocumentMoniker": "MusicBeeInterface.cs",
               "ToolTip": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\MusicBeeInterface.cs",
               "RelativeToolTip": "MusicBeeInterface.cs",
-              "ViewState": "AgIAAIYBAAAAAAAAAAAAADgAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAHcBAAAAAAAAAAAqwDgAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:40:06.07Z"
+              "WhenOpened": "2025-12-08T04:40:06.07Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "JsonKeyValueStore.cs",
               "DocumentMoniker": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\JsonKeyValueStore.cs",
               "RelativeDocumentMoniker": "JsonKeyValueStore.cs",
@@ -84,14 +87,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "CSharpDll",
               "DocumentMoniker": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\CSharpDll.csproj",
               "RelativeDocumentMoniker": "CSharpDll.csproj",
               "ToolTip": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\CSharpDll.csproj",
               "RelativeToolTip": "CSharpDll.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-11-28T15:12:15.928Z"
+              "WhenOpened": "2025-11-28T15:12:15.928Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -99,9 +103,9 @@
               "Title": "TestCSharpDll.cs",
               "DocumentMoniker": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\TestCSharpDll.cs",
               "RelativeDocumentMoniker": "TestCSharpDll.cs",
-              "ToolTip": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\TestCSharpDll.cs*",
-              "RelativeToolTip": "TestCSharpDll.cs*",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAqwFAAAAA/AAAAAAAAAA==",
+              "ToolTip": "C:\\workspace\\musicbeeplugins\\C# Source3.0\\TestCSharpDll.cs",
+              "RelativeToolTip": "TestCSharpDll.cs",
+              "ViewState": "AgIAAK4BAAAAAAAAAAAAAGwAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-28T15:13:50.979Z",
               "EditorCaption": ""
