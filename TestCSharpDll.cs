@@ -64,7 +64,7 @@ namespace MusicBeePlugin
 
         public PluginInfo Initialise(IntPtr apiInterfacePtr)
         {
-            File.WriteAllText(debugLogPath, "test");
+            //File.WriteAllText(debugLogPath, "test");
 
             mbApiInterface = new MusicBeeApiInterface();
             try
@@ -78,7 +78,7 @@ namespace MusicBeePlugin
                 about.Type = PluginType.General;
                 about.VersionMajor = 1;  // your plugin version 破壊的変更
                 about.VersionMinor = 0; // your plugin version 機能追加
-                about.Revision = 1; // your plugin version バグ修正
+                about.Revision = 2; // your plugin version バグ修正
                 about.MinInterfaceVersion = MinInterfaceVersion;
                 about.MinApiRevision = MinApiRevision;
                 about.ReceiveNotifications = (ReceiveNotificationFlags.PlayerEvents | ReceiveNotificationFlags.TagEvents);
