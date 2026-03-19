@@ -2,6 +2,10 @@
 
 A-B Loop plugin for MusicBee.
 
+## Important
+When using an A-B loop, we recommend turning off “smooth fade when stopping”.
+Edit Preferences->Player->sound effects->smooth fade when stopping
+
 ## Features
  - A-B Loop Function
  - Easy setup with hotkeys
@@ -32,6 +36,7 @@ Hotkeys and tags can be customized in MusicBee settings.
  - Automatically enable A-B looping when MusicBee starts
  - Measure-based navigation using BPM and loop start position  
   If the actual loop timing differs, adjust the offset value.
+ - You can also force the loop regardless of the set number of loops using the button.
 
 ## Settings
  - Loop start tag name
@@ -49,6 +54,7 @@ Settings are saved automatically.
  - Save start time
  - Save end time
  - Toggle A-B looping
+ - Toggle Force A-B Loop
  - Go to next measure
  - Go to previous measure
 
@@ -57,13 +63,27 @@ Settings are saved automatically.
 - Windows 10 / 11
 
 ## Version
-- v1.0.1
+- v1.0.2
 
 ## License
 MIT License
 
 ## Author
 bobshroom
+
+## Changelog
+
+### v1.1.0
+- Added a hotkey to trigger a forced loop regardless of the number of loops or settings
+
+### v1.0.2
+- Fix for an error caused by referencing a file that does not exist at startup
+
+### v1.0.1
+- Name change
+
+### v1.0.0
+- Initial release
 
 
 # Advanced A-B loop
@@ -101,6 +121,7 @@ MusicBeeの設定からホットキーの設定をしてください。
  - MusicBee開始時にA-Bリピートを自動的に有効化可能
  - BPMとリピート開始位置から、小節間の移動をホットキーで可能(4/4拍子を想定)  
   設定したリピート時間と実際のリピート時間がずれる場合、オフセットの値を変更してください。
+ - 指定したループ回数に関わらず強制的にループさせるホットキーもあります
 
 ## 設定
  - リピート開始地点タグ名
@@ -117,6 +138,7 @@ MusicBeeの設定からホットキーの設定をしてください。
  - リピート開始地点の保存
  - リピート終了地点の保存
  - A-Bリピートの有効/無効化の切り替え
+ - 強制A-Bリピートの有効/無効化
  - 次の小説に移動
  - 前の小説に移動
 
@@ -132,3 +154,17 @@ MIT License
 
 ## 作者
 bobshroom
+
+## 変更ログ
+
+### v1.1.0
+- ループ回数に関わらず強制的にループさせるホットキーの追加
+
+### v1.0.2
+- 起動時に存在しないファイルを参照したために発生していたエラーの修正
+
+### v1.0.1
+- 名前の変更(つづりが間違えていたため)
+
+### v1.0.0
+- リリース
