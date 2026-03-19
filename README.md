@@ -63,7 +63,7 @@ Settings are saved automatically.
 - Windows 10 / 11
 
 ## Version
-- v1.0.2
+- v1.1.0
 
 ## License
 MIT License
@@ -147,7 +147,7 @@ MusicBeeの設定からホットキーの設定をしてください。
 - Windows 10 / 11
 
 ## バージョン
-- v1.0.1
+- v1.1.0
 
 ## ライセンス
 MIT License
