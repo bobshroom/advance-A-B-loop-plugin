@@ -46,6 +46,8 @@ namespace MusicBeePlugin
         private bool isLoopEnabled = false;
         private bool isTempoMulti1 = false;
 
+        private bool isForceLoop = false;
+
         private int playTimeInLoop = 0;
         private int playTimeNeedToIncrease = 30; // 再生回数を増加させるまでのループ内再生時間（秒）
 
@@ -77,8 +79,8 @@ namespace MusicBeePlugin
                 about.TargetApplication = "";   // current only applies to artwork, lyrics or instant messenger name that appears in the provider drop down selector or target Instant Messenger
                 about.Type = PluginType.General;
                 about.VersionMajor = 1;  // your plugin version 破壊的変更
-                about.VersionMinor = 0; // your plugin version 機能追加
-                about.Revision = 2; // your plugin version バグ修正
+                about.VersionMinor = 1; // your plugin version 機能追加
+                about.Revision = 0; // your plugin version バグ修正
                 about.MinInterfaceVersion = MinInterfaceVersion;
                 about.MinApiRevision = MinApiRevision;
                 about.ReceiveNotifications = (ReceiveNotificationFlags.PlayerEvents | ReceiveNotificationFlags.TagEvents);
@@ -132,6 +134,7 @@ namespace MusicBeePlugin
                 mbApiInterface.MB_AddMenuItem("ToggleLooping", I18n.T("hotkeyToggleABLoop"), toggleLooping);
                 mbApiInterface.MB_AddMenuItem("GoToNextMeasure", I18n.T("hotkeyGoNextMeasure"), nextStep);
                 mbApiInterface.MB_AddMenuItem("GoToPreviousMeasure", I18n.T("hotkeyGoPreviousMeasure"), previousStep);
+                mbApiInterface.MB_AddMenuItem("ToggleForceLoop", I18n.T("hotkeyToggleForceLoop"), toggleForceLoop);
                 //mbApiInterface.MB_AddMenuItem("GoToNextBeat", I18n.T("hotkeyGoNextBeat"), nextBeat);
                 //mbApiInterface.MB_AddMenuItem("GoToPreviousMeasure", I18n.T("hotkeyGoPreviousBeat"), previousBeat);
                 //mbApiInterface.MB_AddMenuItem("Debug", "Debug", debug);
@@ -692,6 +695,20 @@ namespace MusicBeePlugin
             //Debug.WriteLine("タグ取得終了");
         }
 
+        private void GetTagInfoOnlyLoopCount()
+        {
+            string loopCounterStr = mbApiInterface.NowPlaying_GetFileTag((MetaDataType)Enum.Parse(typeof(MetaDataType), loopCounterTag));
+            if (string.IsNullOrEmpty(loopCounterStr))
+            {
+                loopCounter = loopCountDef;
+            }
+            else
+            {
+                loopCounter = int.Parse(loopCounterStr);
+            }
+            if (loopCounter != 0) loopCounter = 1;
+        }
+
         private bool IsOutLoopRegion(int currentPositionMs)
         {
             if (loopStartMs < loopEndMs)
@@ -706,15 +723,16 @@ namespace MusicBeePlugin
 
         private void checkLooping()
         {
-            if (isLoopEnabled)
+            if (isLoopEnabled || isForceLoop)
             {
                 int currentPositionMs = mbApiInterface.Player_GetPosition();
                 //currentPositionMs -= 120;
-                if (IsOutLoopRegion(currentPositionMs - offsetMs) && loopCounter != 1)
+                if (IsOutLoopRegion(currentPositionMs - offsetMs) && (loopCounter != 1 || isForceLoop)) // ループ回数が0の場合無限ループと設定してあるため条件式の変更は非推奨
                 {
                     //Debug.WriteLine("ループ前の位置       :" + loopEndMs.ToString());
                     //Debug.WriteLine("ループ前の実際の位置 :" + mbApiInterface.Player_GetPosition().ToString());
                     mbApiInterface.Player_SetPosition(loopStartMs);
+                    Debug.WriteLine("残りループ回数：" + loopCounter.ToString());
                     //offsetMs = loopStartMs - mbApiInterface.Player_GetPosition();
                     //Debug.WriteLine("ループ後の位置       :" + loopStartMs.ToString());
                     //Debug.WriteLine("ループ後の実際の位置 :" + mbApiInterface.Player_GetPosition().ToString());
@@ -793,10 +811,12 @@ namespace MusicBeePlugin
         {
             int beat = 4; // 4分音符
             int currentPositionMs = mbApiInterface.Player_GetPosition();
-            if (!isLongPress)
+            /*if (!isLongPress)
             {
-                if (isPlaying) currentPositionMs -= offsetMs + 0; // 補正
-            }
+                if (isPlaying) currentPositionMs -= (offsetMs + 0); // 補正
+            }*/
+            if (isPlaying) currentPositionMs -= (int)(offsetMs * 0.2); // 補正
+            else currentPositionMs += 10;
             isLongPress = true;
             checkLongPressTimer.Start();
             double msPerBeat = 60000.0f / BPM;
@@ -870,6 +890,13 @@ namespace MusicBeePlugin
             {
                 SetCheckTimer();
             }
+        }
+
+        private void toggleForceLoop(object sender, EventArgs args)
+        {
+            isForceLoop = !isForceLoop;
+            if (isForceLoop) SetCheckTimer();
+            else GetTagInfoOnlyLoopCount();
         }
         private void previousBeat(object sender, EventArgs args)
         {

@@ -41,6 +41,8 @@ public static class I18n
                         return "A-Bリピート:一拍進める";
                     case "hotkeyGoPreviousBeat":
                         return "A-Bリピート:一拍戻る";
+                    case "hotkeyToggleForceLoop":
+                        return "A-Bリピート:強制A-Bリピートの有効/無効化";
 
                     case "labelLoopStart":
                         return "リピート開始地点タグ名:";
@@ -97,6 +99,8 @@ public static class I18n
                         return "A-B loop:Go to next beat";
                     case "hotkeyGoPreviousBeat":
                         return "A-B loop:Go to previous beat";
+                    case "hotkeyToggleForceLoop":
+                        return "A-B loop:Toggle Force A-B Loop";
 
                     case "labelLoopStart":
                         return "Loop start tag name:";
